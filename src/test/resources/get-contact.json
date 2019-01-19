@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/api/contacts/(.*)"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 2006,
+      "lastName": "Schinner",
+      "firstName": "Deshaun",
+      "email": "meaghan.lind@gmail.com",
+      "phone": "1-471-310-4300 x904",
+      "addressLine1": "854 Abdiel Shoals",
+      "addressLine2": "3013 Terry Ridge",
+      "zipCode": "80919",
+      "city": "East Brettborough",
+      "countrySubDivision": "Pennsylvania",
+      "country": "Grenada"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

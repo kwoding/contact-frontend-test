@@ -1,0 +1,81 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/api/contacts"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "content": [
+        {
+          "id": 2006,
+          "lastName": "Schinner",
+          "firstName": "Deshaun",
+          "email": "meaghan.lind@gmail.com",
+          "phone": "1-471-310-4300 x904",
+          "addressLine1": "854 Abdiel Shoals",
+          "addressLine2": "3013 Terry Ridge",
+          "zipCode": "80919",
+          "city": "East Brettborough",
+          "countrySubDivision": "Pennsylvania",
+          "country": "Grenada"
+        },
+        {
+          "id": 2007,
+          "lastName": "Gutkowski",
+          "firstName": "Tyree",
+          "email": "daren.heller@gmail.com",
+          "phone": "(016) 621-2261 x078",
+          "addressLine1": "472 Carter Spurs",
+          "addressLine2": "1038 OConner Parkways",
+          "zipCode": "12789-1769",
+          "city": "South Nona",
+          "countrySubDivision": "South Carolina",
+          "country": "Libyan Arab Jamahiriya"
+        },
+        {
+          "id": 2008,
+          "lastName": "Goldner",
+          "firstName": "Aleen",
+          "email": "demarco.homenick@hotmail.com",
+          "phone": "946-699-4938 x10049",
+          "addressLine1": "71366 Mosciski Ville",
+          "addressLine2": "09115 Dudley Drives",
+          "zipCode": "02580",
+          "city": "South Monserratemouth",
+          "countrySubDivision": "New Jersey",
+          "country": "Nepal"
+        },
+        {
+          "id": 2009,
+          "lastName": "Schumm",
+          "firstName": "Miller",
+          "email": "lucio.abernathy@hotmail.com",
+          "phone": "596.973.4505",
+          "addressLine1": "5843 Grady Cliffs",
+          "addressLine2": "33551 Stephen Shore",
+          "zipCode": "20523",
+          "city": "New Beaulahtown",
+          "countrySubDivision": "Indiana",
+          "country": "Turkmenistan"
+        },
+        {
+          "id": 2010,
+          "lastName": "Balistreri",
+          "firstName": "Cedrick",
+          "email": "delilah.rohan@hotmail.com",
+          "phone": "1-163-723-3917",
+          "addressLine1": "58298 Bailey Lights",
+          "addressLine2": "977 Cremin Orchard",
+          "zipCode": "67615-4546",
+          "city": "Sipesfurt",
+          "countrySubDivision": "Minnesota",
+          "country": "Philippines"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
