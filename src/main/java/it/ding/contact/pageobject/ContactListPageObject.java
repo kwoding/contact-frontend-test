@@ -55,15 +55,15 @@ public class ContactListPageObject extends BasePage {
     }
 
     public void confirmDeleteContact() {
-        forceClick(MODAL_DELETE_CONTACT_BUTTON);
+        scrollIntoViewAndClick(MODAL_DELETE_CONTACT_BUTTON);
     }
 
     public void cancelDeleteContact() {
-        forceClick(MODAL_CANCEL_DELETE_CONTACT_BUTTON);
+        scrollIntoViewAndClick(MODAL_CANCEL_DELETE_CONTACT_BUTTON);
     }
 
     public void closeContactDetails() {
-        forceClick(MODAL_CONTACT_DETAILS_CLOSE_BUTTON);
+        scrollIntoViewAndClick(MODAL_CONTACT_DETAILS_CLOSE_BUTTON);
     }
 
     public List<Contact> getContactDetailsInList() {

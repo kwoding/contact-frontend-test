@@ -44,7 +44,7 @@ public class BasePage {
             .click();
     }
 
-    public void forceClick(By locator) {
+    public void scrollIntoViewAndClick(By locator) {
         WebElement element = driver.findElement(locator);
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
