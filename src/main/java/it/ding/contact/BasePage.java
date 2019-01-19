@@ -1,5 +1,7 @@
 package it.ding.contact;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,8 +26,22 @@ public class BasePage {
         return driver.findElement(locator);
     }
 
+    public List<WebElement> findAll(By locator) {
+        return driver.findElements(locator);
+    }
+
     public void click(By locator) {
         find(locator).click();
+    }
+
+    public void clickByText(By locator, String text) {
+        List<WebElement> elementList = findAll(locator);
+
+        elementList.stream()
+            .filter(webElement -> text.equals(webElement.getText()))
+            .findFirst()
+            .orElseThrow(() -> new org.openqa.selenium.NoSuchElementException("No element found containing " + text))
+            .click();
     }
 
     public void forceClick(By locator) {
@@ -39,9 +55,9 @@ public class BasePage {
         find(locator).sendKeys(inputText);
     }
 
-    public void select(String inputText, By locator) {
+    public void select(By locator, String text) {
         Select selectItem = new Select(find(locator));
-        selectItem.selectByVisibleText(inputText);
+        selectItem.selectByVisibleText(text);
     }
 
     public void clear(By locator) {
@@ -52,12 +68,19 @@ public class BasePage {
         return find(locator).getText();
     }
 
-    public boolean isDisplayed(By locator) {
-        try {
-            return find(locator).isDisplayed();
-        } catch (org.openqa.selenium.NoSuchElementException exception) {
-            return false;
+    public List<String> getTextOfAllElements(By locator) {
+        List<String> textList = new ArrayList<>();
+        List<WebElement> elementList = findAll(locator);
+
+        for (WebElement element : elementList) {
+            textList.add(element.getText());
         }
+
+        return textList;
+    }
+
+    public boolean isDisplayed(By locator) {
+        return isDisplayed(locator, 3000);
     }
 
     public boolean isDisplayed(By locator, int timeout) {

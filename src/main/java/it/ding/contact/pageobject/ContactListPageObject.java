@@ -2,6 +2,8 @@ package it.ding.contact.pageobject;
 
 import it.ding.contact.BasePage;
 import it.ding.contact.model.Contact;
+import java.util.ArrayList;
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -40,8 +42,8 @@ public class ContactListPageObject extends BasePage {
         click(ADD_CONTACT_BUTTON);
     }
 
-    public void viewContact() {
-        click(CONTACT_LAST_NAME);
+    public void viewContact(String lastName) throws NoSuchFieldException {
+        clickByText(CONTACT_LAST_NAME, lastName);
     }
 
     public void editContact() {
@@ -64,17 +66,27 @@ public class ContactListPageObject extends BasePage {
         forceClick(MODAL_CONTACT_DETAILS_CLOSE_BUTTON);
     }
 
-    public Contact getContactDetailsInList() {
-        return Contact.builder()
-            .lastName(getText(CONTACT_LAST_NAME))
-            .firstName(getText(CONTACT_FIRST_NAME))
-            .email(getText(CONTACT_EMAIL))
-            .build();
+    public List<Contact> getContactDetailsInList() {
+        List<Contact> contactList = new ArrayList<>();
+        List<String> lastNameList = getTextOfAllElements(CONTACT_LAST_NAME);
+        List<String> firstNameList = getTextOfAllElements(CONTACT_FIRST_NAME);
+        List<String> emailList = getTextOfAllElements(CONTACT_EMAIL);
+
+        for (int i = 0; i < lastNameList.size(); i++) {
+            contactList.add(Contact.builder()
+                .lastName(lastNameList.get(i))
+                .firstName(firstNameList.get(i))
+                .email(emailList.get(i))
+                .build());
+        }
+
+        return contactList;
     }
 
     public Contact getContactDetailsInModal() {
-        isDisplayed(MODAL_CONTACT_LAST_NAME);
-        isDisplayed(MODAL_CONTACT_DETAILS_CLOSE_BUTTON);
+        if (!isDisplayed(MODAL_CONTACT_LAST_NAME)) {
+            return null;
+        }
 
         return Contact.builder()
             .lastName(getText(MODAL_CONTACT_LAST_NAME))

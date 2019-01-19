@@ -13,24 +13,24 @@ public class Contact {
 
     private Long id;
 
-    @Builder.Default private String lastName = "";
+    private String lastName = "";
 
-    @Builder.Default private String firstName = "";
+    private String firstName = "";
 
-    @Builder.Default private String email = "";
+    private String email = "";
 
-    @Builder.Default private String phone = "";
+    private String phone = "";
 
-    @Builder.Default private String addressLine1 = "";
+    private String addressLine1 = "";
 
-    @Builder.Default private String addressLine2 = "";
+    private String addressLine2 = "";
 
-    @Builder.Default private String zipCode = "";
+    private String zipCode = "";
 
-    @Builder.Default private String city = "";
+    private String city = "";
 
-    @Builder.Default private String countrySubDivision = "";
+    private String countrySubDivision = "";
 
-    @Builder.Default private String country = "";
+    private String country = "";
 
 }

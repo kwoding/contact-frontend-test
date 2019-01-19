@@ -8,6 +8,7 @@
 - HTTP 500
 
 2. Use Selenium WebDriver (boilerplate already in this project) to navigate through the front-end to retrieve the contact list.
-3. Assert the result on the front-end.
+3. Click on a contact (table row) to view details of a single contact.
+3. Assert the result on the front-end (for both the list and the single contact).
 
 Note: if the GET on /api/contacts returns an OK response, the test application considers you are logged in
