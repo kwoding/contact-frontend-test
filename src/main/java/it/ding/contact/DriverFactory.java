@@ -5,16 +5,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class DriverFactory {
+class DriverFactory {
 
     private static RemoteWebDriver driver;
+
+    private DriverFactory() {
+
+    }
 
     static void setDriver() {
         WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
         driver = new ChromeDriver();
     }
 
-    public static RemoteWebDriver getDriver() {
+    static RemoteWebDriver getDriver() {
         return driver;
     }
 
