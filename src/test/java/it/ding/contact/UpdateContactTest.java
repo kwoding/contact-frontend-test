@@ -2,6 +2,7 @@ package it.ding.contact;
 
 import static it.ding.contact.DriverFactory.getDriver;
 import static it.ding.contact.util.ContactTestUtil.generateContactWithAllFieldsFilled;
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -26,6 +27,19 @@ public class UpdateContactTest extends Base {
         addEditContactPageObject.saveContact();
 
         assertThat(notificationComponentObject.getNotificationText(), is("Contact updated successfully"));
+    }
+
+    @Test
+    public void cannotUpdateContactWithBadRequest() {
+        wireMockRestClient.createStub("put-contact-bad-request.json");
+        Contact contact = generateContactWithAllFieldsFilled();
+
+        contactListPageObject.editContact();
+        addEditContactPageObject.enterContactDetails(contact);
+        addEditContactPageObject.saveContact();
+
+        assertThat(notificationComponentObject.getNotificationText(), containsString("Cannot edit contact"));
+        assertThat(addEditContactPageObject.getAlert(), containsString("Field errors"));
     }
 
 }
