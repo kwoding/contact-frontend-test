@@ -26,7 +26,6 @@ public class Base {
         wireMockRestClient.createStub("login.json");
         wireMockRestClient.createStub("logout.json");
         wireMockRestClient.createStub("get-contact-list.json");
-        wireMockRestClient.createStub("post-contact.json");
         wireMockRestClient.createStub("get-contact.json");
         contactListPageObject.visit();
     }
