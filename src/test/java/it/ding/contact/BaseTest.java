@@ -8,12 +8,13 @@ import it.ding.contact.pageobject.ContactListPageObject;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
-public class Base {
+public class BaseTest {
 
     private ContactListPageObject contactListPageObject = new ContactListPageObject(getDriver());
 
-    static WireMockRestClient wireMockRestClient = new WireMockRestClient();
+    private WireMockRestClient wireMockRestClient = new WireMockRestClient();
 
     @BeforeClass
     public static void setUp() {
@@ -25,8 +26,10 @@ public class Base {
         wireMockRestClient.resetAll();
         wireMockRestClient.createStub("login.json");
         wireMockRestClient.createStub("logout.json");
-        wireMockRestClient.createStub("get-contact-list.json");
-        wireMockRestClient.createStub("get-contact.json");
+    }
+
+    @Test
+    public void testSomethingNew() {
         contactListPageObject.visit();
     }
 
