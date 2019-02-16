@@ -11,7 +11,6 @@ public class ContactListPageObject extends BasePage {
 
     private static final String CONTACTS = "http://localhost:3000/contacts";
     private static final By ADD_CONTACT_BUTTON = By.cssSelector("[auto-id='add-contact-button']");
-    private static final By EDIT_CONTACT_BUTTON = By.cssSelector("[auto-id='edit-contact-button']");
     private static final By CONTACT_LAST_NAME = By.cssSelector("[auto-id='contact-last-name']");
     private static final By CONTACT_FIRST_NAME = By.cssSelector("[auto-id='contact-first-name']");
     private static final By CONTACT_EMAIL = By.cssSelector("[auto-id='contact-email']");
@@ -41,10 +40,6 @@ public class ContactListPageObject extends BasePage {
 
     public void viewContact(String lastName) {
         clickByText(CONTACT_LAST_NAME, lastName);
-    }
-
-    public void editContact() {
-        click(EDIT_CONTACT_BUTTON);
     }
 
     public void closeContactDetails() {
