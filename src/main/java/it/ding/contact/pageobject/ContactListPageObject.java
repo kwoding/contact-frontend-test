@@ -42,7 +42,7 @@ public class ContactListPageObject extends BasePage {
         click(ADD_CONTACT_BUTTON);
     }
 
-    public void viewContact(String lastName) throws NoSuchFieldException {
+    public void viewContact(String lastName) {
         clickByText(CONTACT_LAST_NAME, lastName);
     }
 
