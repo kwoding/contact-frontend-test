@@ -26,11 +26,21 @@ public class BaseTest {
         wireMockRestClient.resetAll();
         wireMockRestClient.createStub("login.json");
         wireMockRestClient.createStub("logout.json");
+        // Create stub for retrieving contact list
+
+        // Create stub for retrieve contact details
+
+        contactListPageObject.visit();
     }
 
     @Test
-    public void testSomethingNew() {
-        contactListPageObject.visit();
+    public void canRetrieveContactInList() {
+        // Visit page
+
+        // Read source (stub)
+
+        // Assert list of contacts (compare contact list in browser to the source/stub)
+
     }
 
     @AfterClass
