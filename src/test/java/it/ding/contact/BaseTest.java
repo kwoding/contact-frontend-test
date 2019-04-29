@@ -29,8 +29,6 @@ public class BaseTest {
         // Create stub for retrieving contact list
 
         // Create stub for retrieve contact details
-
-        contactListPageObject.visit();
     }
 
     @Test
@@ -38,9 +36,14 @@ public class BaseTest {
         // Visit page
 
         // Read source (stub)
+//            List<Contact> contactList = JsonPath.from(new File(requireNonNull(getClass()
+//                .getClassLoader()
+//                .getResource("get-contact-list.json"))
+//                .getFile())).getList("response.jsonBody.content", Contact.class);
+
+        // Update source data to match expected result
 
         // Assert list of contacts (compare contact list in browser to the source/stub)
-
     }
 
     @AfterClass
