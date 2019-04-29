@@ -16,7 +16,7 @@
         <lombok.version>1.18.4</lombok.version>
         <selenium-java.version>3.141.59</selenium-java.version>
         <selenium-chrome-driver.version>3.141.59</selenium-chrome-driver.version>
-        <webdrivermanager.version>3.1.1</webdrivermanager.version>
+        <webdrivermanager.version>3.4.0</webdrivermanager.version>
         <javafaker.version>0.16</javafaker.version>
     </properties>
 
