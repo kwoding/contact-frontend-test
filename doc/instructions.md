@@ -32,12 +32,19 @@ contact-frontend_1  |
 
 4. Navigate in your Chrome browser to http://localhost:3000, you should see the following on your screen.
 
+**Note:** If you are running Docker Toolbox (Windows) the default IP is `192.168.99.100` (you can check by running `docker-machine ip default`), so navigate in your browser to http://192.168.99.100:3000 instead.
+
 ![Login screen](./img/login_screen.png)
 
 5. Run the following command in the root folder of the project (in a different terminal window) to ensure you have everything set up.
 
 ```
 mvn clean test
+```
+
+**Note:** If you are running Docker Toolbox (Windows), run the command
+```
+mvn clean test -Dapp.base.uri=http://192.168.99.100:3000 -wiremock.base.uri=http://192.168.99.100:8080
 ```
 
 Expected result is a successful build:
