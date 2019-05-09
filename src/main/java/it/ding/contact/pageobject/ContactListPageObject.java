@@ -1,7 +1,10 @@
 package it.ding.contact.pageobject;
 
+import static it.ding.contact.data.CommonData.PROPERTY_APP_BASE_URI;
+
 import it.ding.contact.BasePage;
 import it.ding.contact.model.Contact;
+import it.ding.contact.util.GlobalProperties;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -9,7 +12,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class ContactListPageObject extends BasePage {
 
-    private static final String CONTACTS = "http://localhost:3000/contacts";
+    private static final GlobalProperties globalProperties = GlobalProperties.getInstance();
+    private static final String BASE_URI = globalProperties.getString(PROPERTY_APP_BASE_URI);
+    private static final String CONTACTS = BASE_URI + "/contacts";
     private static final By ADD_CONTACT_BUTTON = By.cssSelector("[auto-id='add-contact-button']");
     private static final By EDIT_CONTACT_BUTTON = By.cssSelector("[auto-id='edit-contact-button']");
     private static final By CONTACT_LAST_NAME = By.cssSelector("[auto-id='contact-last-name']");
