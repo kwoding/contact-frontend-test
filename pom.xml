@@ -13,6 +13,7 @@
         <junit.version>4.12</junit.version>
         <rest-assured.version>3.2.0</rest-assured.version>
         <jackson-databind.version>2.9.8</jackson-databind.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
         <lombok.version>1.18.4</lombok.version>
         <selenium-java.version>3.141.59</selenium-java.version>
         <selenium-chrome-driver.version>3.141.59</selenium-chrome-driver.version>
@@ -40,6 +41,11 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>${commons-configuration.version}</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
