@@ -26,7 +26,7 @@ import org.apache.http.client.utils.URIBuilder;
 
 public class RestClient {
 
-    private static final String CONNECTION_MANAGER_TIMEOUT = "CONNECTION_MANAGER_TIMEOUT";
+    private static final String CONNECTION_MANAGER_TIMEOUT = "http.connection.timeout";
     private static final int TIMEOUT_VALUE = 10000;
 
     private URI baseURI = null;
