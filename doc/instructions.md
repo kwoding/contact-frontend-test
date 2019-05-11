@@ -44,7 +44,7 @@ mvn clean test
 
 **Note:** If you are running Docker Toolbox (Windows), run the command
 ```
-mvn clean test -Dapp.base.uri=http://192.168.99.100:3000 -wiremock.base.uri=http://192.168.99.100:8080
+mvn clean test -Dapp.base.uri=http://192.168.99.100:3000 -Dwiremock.base.uri=http://192.168.99.100:8080
 ```
 
 Expected result is a successful build:
