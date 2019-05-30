@@ -41,9 +41,9 @@ public class BaseTest {
 //                .getResource("get-contact-list.json"))
 //                .getFile())).getList("response.jsonBody.content", Contact.class);
 
-        // Update source data to match expected result
+        // Update contactList to match expected result
 
-        // Assert list of contacts (compare contact list in browser to the source/stub)
+        // Assert list of contacts (compare contact list in browser to the source/stub), use the contactListPageObject.getContactDetailsInList()
     }
 
     @AfterClass
