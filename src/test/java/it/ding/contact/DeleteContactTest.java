@@ -15,11 +15,11 @@ public class DeleteContactTest extends Base {
     public void canDeleteContact() {
         // Create stub for deleting a contact (DELETE)
 
-        // Invoke deleting a contact
+        // Invoke deleting a contact, use contactListPageObject.invokeDeleteContact()
 
         // Confirm deleting
 
-        // Assert notification text (Contact removed successfully
+        // Assert notification text (Contact removed successfully), use notificationComponentObject.getNotificationText()
     }
 
 }
