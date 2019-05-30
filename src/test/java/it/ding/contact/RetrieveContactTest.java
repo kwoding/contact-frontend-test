@@ -38,15 +38,13 @@ public class RetrieveContactTest extends Base {
     }
 
     @Test
-    public void canRetrieveContactDetails() throws NoSuchFieldException {
-        List<Contact> contactList = JsonPath.from(new File(requireNonNull(getClass()
+    public void canRetrieveContactDetails() {
+        Contact expectedContact = JsonPath.from(new File(requireNonNull(getClass()
             .getClassLoader()
-            .getResource("get-contact-list.json"))
-            .getFile())).getList("response.jsonBody.content", Contact.class);
+            .getResource("get-contact.json"))
+            .getFile())).getObject("response.jsonBody", Contact.class);
 
-        contactListPageObject.viewContact(contactList.get(1).getLastName());
-
-        Contact expectedContact = contactList.get(1);
+        contactListPageObject.viewContact(expectedContact.getLastName());
 
         expectedContact.setId(null);
         assertThat(contactListPageObject.getContactDetailsInModal(), is(expectedContact));
