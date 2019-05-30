@@ -55,6 +55,40 @@ Reset all stubs (clear)
 
 ### Stub definition examples
 
+Example of a stub definition for retrieving list of contacts
+
+```
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/api/contacts"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+        "content": [
+            {
+                "id": 2006,
+                "lastName": "Schinner",
+                "firstName": "Deshaun",
+                (…)
+            },
+            {
+                "id": 2007,
+                "lastName": "Bond",
+                "firstName": "James",
+                (…)
+            },
+            (...)
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
+
+```
+
 Example of a stub definition for retrieving a single contact
 
 ```
