@@ -2,9 +2,14 @@ package it.ding.contact;
 
 import static it.ding.contact.DriverFactory.getDriver;
 import static it.ding.contact.DriverFactory.setDriver;
+import static java.util.Objects.requireNonNull;
 
+import io.restassured.path.json.JsonPath;
 import it.ding.contact.client.WireMockRestClient;
+import it.ding.contact.model.Contact;
 import it.ding.contact.pageobject.ContactListPageObject;
+import java.io.File;
+import java.util.List;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -26,7 +31,7 @@ public class BaseTest {
         wireMockRestClient.resetAll();
         wireMockRestClient.createStub("login.json");
         wireMockRestClient.createStub("logout.json");
-        // Create stub for retrieving contact list
+        // Create stub (json file) for retrieving contact list in src/test/resources folder
 
         // Create stub for retrieve contact details
     }
@@ -36,14 +41,32 @@ public class BaseTest {
         // Visit page
 
         // Read source (stub)
-//            List<Contact> contactList = JsonPath.from(new File(requireNonNull(getClass()
-//                .getClassLoader()
-//                .getResource("get-contact-list.json"))
-//                .getFile())).getList("response.jsonBody.content", Contact.class);
+        List<Contact> contactList = JsonPath.from(new File(requireNonNull(getClass()
+            .getClassLoader()
+            .getResource("get-contact-list.json"))
+            .getFile())).getList("response.jsonBody.content", Contact.class);
 
         // Update contactList to match expected result
 
         // Assert list of contacts (compare contact list in browser to the source/stub), use the contactListPageObject.getContactDetailsInList()
+    }
+
+    @Test
+    public void canRetrieveContactDetails() {
+        // Visit page
+
+        // Read source (stub)
+        List<Contact> contactList = JsonPath.from(new File(requireNonNull(getClass()
+            .getClassLoader()
+            .getResource("get-contact-list.json"))
+            .getFile())).getList("response.jsonBody.content", Contact.class);
+
+        // View single contact via browser, use contactListPageObject.viewContact()
+
+        // Create Contact object for expected contact in browser
+
+        // Get contact details in modal via browser, use contactListPageObject.getContactDetailsInModal()
+        // Assert the contact from browser with expected Contact object
     }
 
     @AfterClass
