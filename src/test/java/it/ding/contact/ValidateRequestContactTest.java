@@ -20,9 +20,9 @@ public class ValidateRequestContactTest extends Base {
         // Add a contact (click on Add contact, enter contact details and save)
         // Just before clicking Save, reset the request journal
 
-        // Find the request body in WireMock
+        // Find the request body in WireMock, use wireMockRestClient.findFirstRequestBody()
 
-        // Map the request body to Contact class
+        // Map the found request body to Contact class, use gson.fromJson()
 
         // Assert the request body with the contact object already created in this test
 
