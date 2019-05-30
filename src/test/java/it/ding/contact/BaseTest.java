@@ -31,9 +31,9 @@ public class BaseTest {
         wireMockRestClient.resetAll();
         wireMockRestClient.createStub("login.json");
         wireMockRestClient.createStub("logout.json");
-        // Create stub (json file) for retrieving contact list in src/test/resources folder
+        // Update stub "get-contact-list.json" for retrieving contact list in src/test/resources folder
 
-        // Create stub for retrieve contact details
+        // Update stub "get-contact.json" for retrieving contact details
     }
 
     @Test
@@ -56,17 +56,15 @@ public class BaseTest {
         // Visit page
 
         // Read source (stub)
-        List<Contact> contactList = JsonPath.from(new File(requireNonNull(getClass()
+        Contact contact = JsonPath.from(new File(requireNonNull(getClass()
             .getClassLoader()
-            .getResource("get-contact-list.json"))
-            .getFile())).getList("response.jsonBody.content", Contact.class);
+            .getResource("get-contact.json"))
+            .getFile())).getObject("response.jsonBody", Contact.class);
 
         // View single contact via browser, use contactListPageObject.viewContact()
 
-        // Create Contact object for expected contact in browser
-
         // Get contact details in modal via browser, use contactListPageObject.getContactDetailsInModal()
-        // Assert the contact from browser with expected Contact object
+        // Assert the contact from browser with expected Contact object (= stub)
     }
 
     @AfterClass

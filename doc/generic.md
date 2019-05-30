@@ -80,6 +80,7 @@ Example of a stub definition for retrieving list of contacts
                 (…)
             },
             (...)
+        ]
     },
     "headers": {
       "Content-Type": "application/json"
