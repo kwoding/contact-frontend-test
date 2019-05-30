@@ -15,6 +15,7 @@ public class ContactListPageObject extends BasePage {
     private static final GlobalProperties globalProperties = GlobalProperties.getInstance();
     private static final String BASE_URI = globalProperties.getString(PROPERTY_APP_BASE_URI);
     private static final String CONTACTS = BASE_URI + "/contacts";
+    private static final By ADD_CONTACT_BUTTON = By.cssSelector("[auto-id='add-contact-button']");
     private static final By CONTACT_LAST_NAME = By.cssSelector("[auto-id='contact-last-name']");
     private static final By CONTACT_FIRST_NAME = By.cssSelector("[auto-id='contact-first-name']");
     private static final By CONTACT_EMAIL = By.cssSelector("[auto-id='contact-email']");
@@ -36,6 +37,10 @@ public class ContactListPageObject extends BasePage {
 
     public void visit() {
         visit(CONTACTS);
+    }
+
+    public void addContact() {
+        click(ADD_CONTACT_BUTTON);
     }
 
     public void viewContact(String lastName) {
