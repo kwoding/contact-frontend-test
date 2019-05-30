@@ -17,6 +17,7 @@ public class ContactListPageObject extends BasePage {
     private static final String CONTACTS = BASE_URI + "/contacts";
     private static final By ADD_CONTACT_BUTTON = By.cssSelector("[auto-id='add-contact-button']");
     private static final By EDIT_CONTACT_BUTTON = By.cssSelector("[auto-id='edit-contact-button']");
+    private static final By DELETE_CONTACT_BUTTON = By.cssSelector("[auto-id='delete-contact-button']");
     private static final By CONTACT_LAST_NAME = By.cssSelector("[auto-id='contact-last-name']");
     private static final By CONTACT_FIRST_NAME = By.cssSelector("[auto-id='contact-first-name']");
     private static final By CONTACT_EMAIL = By.cssSelector("[auto-id='contact-email']");
@@ -30,6 +31,8 @@ public class ContactListPageObject extends BasePage {
     private static final By MODAL_CONTACT_CITY = By.cssSelector("[auto-id='modal-contact-details-city']");
     private static final By MODAL_CONTACT_COUNTRY_SUB_DIVISION = By.cssSelector("[auto-id='modal-contact-details-country-sub-division']");
     private static final By MODAL_CONTACT_COUNTRY = By.cssSelector("[auto-id='modal-contact-details-country']");
+    private static final By MODAL_DELETE_CONTACT_BUTTON = By.cssSelector("[auto-id='modal-delete-contact-button']");
+    private static final By MODAL_CANCEL_DELETE_CONTACT_BUTTON = By.cssSelector("[auto-id='modal-cancel-delete-contact-button']");
     private static final By MODAL_CONTACT_DETAILS_CLOSE_BUTTON = By.cssSelector("[auto-id='modal-contact-details-close-button']");
 
     public ContactListPageObject(RemoteWebDriver driver) {
@@ -50,6 +53,18 @@ public class ContactListPageObject extends BasePage {
 
     public void editContact() {
         click(EDIT_CONTACT_BUTTON);
+    }
+
+    public void invokeDeleteContact() {
+        click(DELETE_CONTACT_BUTTON);
+    }
+
+    public void confirmDeleteContact() {
+        scrollIntoViewAndClick(MODAL_DELETE_CONTACT_BUTTON);
+    }
+
+    public void cancelDeleteContact() {
+        scrollIntoViewAndClick(MODAL_CANCEL_DELETE_CONTACT_BUTTON);
     }
 
     public void closeContactDetails() {
